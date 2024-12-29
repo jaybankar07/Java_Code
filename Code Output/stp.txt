@@ -1,0 +1,54 @@
+1. Install Git:
+
+sudo apt update
+sudo apt install git -y
+
+2. Install JDK 21:
+
+sudo apt update
+sudo apt install openjdk-21-jdk -y
+
+3. If not available, download from Adoptium or Oracle:
+
+wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+sudo dpkg -i jdk-21_linux-x64_bin.deb
+sudo apt-get install -f  # To fix dependencies
+
+3.1. Set JDK 21 as default:
+
+sudo update-alternatives --config java
+java -version
+
+4. Install Jenkins:
+
+Add Jenkins repository and install:
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins -y
+
+Start Jenkins service:
+
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+Verify Jenkins is running:
+
+sudo systemctl status Jenkins
+
+Step 1:
+
+git init
+
+git add .
+
+git commit -m "Initial Commit"
+
+Step 2:
+
+git remote add origin repo_url
+
+git branch -M main or master
+
+git push -u origin main or master
