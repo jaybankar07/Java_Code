@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'javac CICD.java'
+                sh 'javac CICD.java'
             }
         }
 
         stage('Run') {
             steps {
-                bat 'java CICD'
+                sh 'java CICD'
             }
         }
     }
